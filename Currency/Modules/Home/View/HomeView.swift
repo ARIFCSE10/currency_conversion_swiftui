@@ -19,8 +19,8 @@ struct HomeView: View {
             }else{
                 VStack{
                     TextField("Enter Amount", text: $amount)
-                        .padding(.horizontal)
-                        .padding(16)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
                     
                     GroupBox {
                         HStack{

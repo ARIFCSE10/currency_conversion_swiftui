@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeViewModelProtocol:ObservableObject {
     func fetchCurrencies() async
+    func fetchRates() async
 }
 
 @MainActor
