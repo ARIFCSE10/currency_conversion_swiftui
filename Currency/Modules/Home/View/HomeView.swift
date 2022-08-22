@@ -59,7 +59,7 @@ struct HomeView: View {
                 .navigationTitle("Conversion")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    Button("Base") {
+                    Button("USD") {
                         vm.selectedCurrency = Currency.base
                         amount = "100"
                     }
@@ -67,8 +67,7 @@ struct HomeView: View {
             }
         }
         .task {
-            await vm.fetchCurrencies()
-            await vm.fetchRates()
+            await vm.loadData()
         }
     }
 }

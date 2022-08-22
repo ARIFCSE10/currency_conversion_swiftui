@@ -6,7 +6,8 @@
 //
 
 import Foundation
-class ConversionUtil{
+
+struct ConversionUtil{
     static func convert(fromCurrency:Currency, amount:Double, toCurrency:Currency) -> Double {
         if(fromCurrency.code == "USD"){
             return amount * (toCurrency.rate ?? 0)

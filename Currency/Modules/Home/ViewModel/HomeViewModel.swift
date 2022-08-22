@@ -38,17 +38,33 @@ final class HomeViewModel: HomeViewModelProtocol {
             self.rates = try await self.api.getRates()
             self.rates?.rates.forEach({ key, value in
                 currencyMap[key]?.rate = value
-                if(key == "USD"){
-                    selectedCurrency = currencyMap[key] ?? Currency.base
-                }
             })
         }catch{
             print(error)
         }
     }
     
+    func loadData() async {
+        if(CacheService.isCacheValid(timeStamp: LocalDataService.getTimeStamp())){
+            print("using cached data")
+            currencies = CacheService.loadCurrenciesCacheData()
+            self.currencies.forEach { currency in
+                currencyMap[currency.code] = currency
+            }
+        }else{
+            print("using api data")
+            Task{
+                async let currenciesTask: () = fetchCurrencies()
+                async let ratesTask: () = fetchRates()
+                let _ = await [currenciesTask, ratesTask]
+                CacheService.saveCurrenciesCacheData(currencies: currencyMap.values.reversed())
+            }
+        }
+    }
+    
     init(api:HomeApi) {
         self.api = api
+        selectedCurrency =  Currency.base
     }
     
     
