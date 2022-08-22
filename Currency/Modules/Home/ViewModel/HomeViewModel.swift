@@ -16,6 +16,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     private(set) var currencies:[Currency] = []
     private(set) var rates:ConversionModel? = nil
     @Published private(set) var currencyMap: CurrencyMap = CurrencyMap()
+    @Published var selectedCurrency: Currency = Currency.base
     
     private let api:HomeApi
     
@@ -36,6 +37,9 @@ final class HomeViewModel: HomeViewModelProtocol {
             self.rates = try await self.api.getRates()
             self.rates?.rates.forEach({ key, value in
                 currencyMap[key]?.rate = value
+                if(key == "USD"){
+                    selectedCurrency = currencyMap[key] ?? Currency.base
+                }
             })
         }catch{
             print(error)

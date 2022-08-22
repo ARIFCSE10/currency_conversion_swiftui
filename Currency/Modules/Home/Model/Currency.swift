@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Currency{
+struct Currency : Hashable{
     var rate:Double?
     let code:String
     let name:String
@@ -14,7 +14,11 @@ struct Currency{
 
 extension Currency{
     static let mock:[Currency] = [
-        Currency(rate: 1, code: "USD", name: "US Dollar"),
-        Currency(rate: 95, code: "BST", name: "Bangladeshi Taka")
+        Currency(rate: 1, code: "USD", name: "United States Dollar"),
+        Currency(rate: 95, code: "BDT", name: "Bangladeshi Taka")
     ]
+    
+    static let base:Currency = Currency(rate: 1, code: "USD", name: "United States Dollar")
+    static let second:Currency = Currency(rate: 95, code: "BDT", name: "Bangladeshi Taka")
+
 }

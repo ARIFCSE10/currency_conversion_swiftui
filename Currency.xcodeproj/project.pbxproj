@@ -11,6 +11,9 @@
 		8021CD8628B2879E00FC393A /* HomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021CD8528B2879E00FC393A /* HomeApi.swift */; };
 		8021CD8A28B2917B00FC393A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021CD8928B2917B00FC393A /* Currency.swift */; };
 		8021CD8D28B34CD300FC393A /* CurrencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021CD8C28B34CD300FC393A /* CurrencyItemView.swift */; };
+		8021CD8F28B3638D00FC393A /* PopupMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021CD8E28B3638D00FC393A /* PopupMenuView.swift */; };
+		8021CD9228B3641700FC393A /* PopupMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021CD9128B3641700FC393A /* PopupMenuItemView.swift */; };
+		8021CD9528B3722800FC393A /* ConversionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021CD9428B3722800FC393A /* ConversionUtil.swift */; };
 		8041015B28B176F200DA85A3 /* CurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041015A28B176F200DA85A3 /* CurrencyApp.swift */; };
 		8041015F28B176F500DA85A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8041015E28B176F500DA85A3 /* Assets.xcassets */; };
 		8041016228B176F500DA85A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8041016128B176F500DA85A3 /* Preview Assets.xcassets */; };
@@ -44,6 +47,9 @@
 		8021CD8528B2879E00FC393A /* HomeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApi.swift; sourceTree = "<group>"; };
 		8021CD8928B2917B00FC393A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		8021CD8C28B34CD300FC393A /* CurrencyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItemView.swift; sourceTree = "<group>"; };
+		8021CD8E28B3638D00FC393A /* PopupMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuView.swift; sourceTree = "<group>"; };
+		8021CD9128B3641700FC393A /* PopupMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuItemView.swift; sourceTree = "<group>"; };
+		8021CD9428B3722800FC393A /* ConversionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionUtil.swift; sourceTree = "<group>"; };
 		8041015728B176F200DA85A3 /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8041015A28B176F200DA85A3 /* CurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyApp.swift; sourceTree = "<group>"; };
 		8041015E28B176F500DA85A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,12 +105,22 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		8021CD8B28B34C8400FC393A /* Widgets */ = {
+		8021CD8B28B34C8400FC393A /* ChildViews */ = {
 			isa = PBXGroup;
 			children = (
 				8021CD8C28B34CD300FC393A /* CurrencyItemView.swift */,
+				8021CD8E28B3638D00FC393A /* PopupMenuView.swift */,
+				8021CD9128B3641700FC393A /* PopupMenuItemView.swift */,
 			);
-			path = Widgets;
+			path = ChildViews;
+			sourceTree = "<group>";
+		};
+		8021CD9328B3721700FC393A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8021CD9428B3722800FC393A /* ConversionUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		803EDE2228B1D58200881E6E /* App */ = {
@@ -191,7 +207,7 @@
 		80B967DC28B2216800729CE6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8021CD8B28B34C8400FC393A /* Widgets */,
+				8021CD9328B3721700FC393A /* Util */,
 				8021CD8428B2878C00FC393A /* API */,
 				8021CD8128B22CD500FC393A /* ViewModel */,
 				80B967E028B2258400729CE6 /* View */,
@@ -212,6 +228,7 @@
 		80B967E028B2258400729CE6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8021CD8B28B34C8400FC393A /* ChildViews */,
 				80B967E128B225F500729CE6 /* HomeView.swift */,
 			);
 			path = View;
@@ -347,11 +364,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8021CD9528B3722800FC393A /* ConversionUtil.swift in Sources */,
 				80B967DF28B2232C00729CE6 /* ConversionModel.swift in Sources */,
 				80B967E228B225F500729CE6 /* HomeView.swift in Sources */,
 				8041015B28B176F200DA85A3 /* CurrencyApp.swift in Sources */,
+				8021CD9228B3641700FC393A /* PopupMenuItemView.swift in Sources */,
 				8021CD8328B22CEA00FC393A /* HomeViewModel.swift in Sources */,
 				80B967DB28B2208B00729CE6 /* Constants.swift in Sources */,
+				8021CD8F28B3638D00FC393A /* PopupMenuView.swift in Sources */,
 				8021CD8A28B2917B00FC393A /* Currency.swift in Sources */,
 				8021CD8D28B34CD300FC393A /* CurrencyItemView.swift in Sources */,
 				8021CD8628B2879E00FC393A /* HomeApi.swift in Sources */,
